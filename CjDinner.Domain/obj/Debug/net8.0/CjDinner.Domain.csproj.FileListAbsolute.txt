@@ -9,3 +9,4 @@ C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Domain\obj\Debug\net8.0\CjDin
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Domain\obj\Debug\net8.0\refint\CjDinner.Domain.dll
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Domain\obj\Debug\net8.0\CjDinner.Domain.pdb
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Domain\obj\Debug\net8.0\ref\CjDinner.Domain.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Domain\obj\Debug\net8.0\CjDinner.Domain.sourcelink.json

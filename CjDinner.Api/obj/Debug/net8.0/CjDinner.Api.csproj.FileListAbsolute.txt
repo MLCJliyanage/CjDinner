@@ -39,3 +39,4 @@ C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Api\bin\Debug\net8.0\CjDinner
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Api\bin\Debug\net8.0\CjDinner.Application.pdb
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Api\bin\Debug\net8.0\CjDinner.Infrastructure.pdb
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Api\bin\Debug\net8.0\CjDinner.Domain.pdb
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Api\obj\Debug\net8.0\CjDinner.Api.sourcelink.json

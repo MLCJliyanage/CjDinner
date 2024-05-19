@@ -9,3 +9,4 @@ C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Contracts\obj\Debug\net8.0\Cj
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Contracts\obj\Debug\net8.0\refint\CjDinner.Contracts.dll
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Contracts\obj\Debug\net8.0\CjDinner.Contracts.pdb
 C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Contracts\obj\Debug\net8.0\ref\CjDinner.Contracts.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Contracts\obj\Debug\net8.0\CjDinner.Contracts.sourcelink.json
