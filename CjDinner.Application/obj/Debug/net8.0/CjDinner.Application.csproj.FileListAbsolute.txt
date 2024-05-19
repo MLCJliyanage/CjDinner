@@ -1,0 +1,15 @@
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\bin\Debug\net8.0\CjDinner.Application.deps.json
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\bin\Debug\net8.0\CjDinner.Application.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\bin\Debug\net8.0\CjDinner.Application.pdb
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.AssemblyInfoInputs.cache
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.AssemblyInfo.cs
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.csproj.CoreCompileInputs.cache
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\refint\CjDinner.Application.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.pdb
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\ref\CjDinner.Application.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\bin\Debug\net8.0\CjDinner.Domain.dll
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\bin\Debug\net8.0\CjDinner.Domain.pdb
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.Application.csproj.AssemblyReference.cache
+C:\Projects\CleanArchitectureDDD\CjDinner\CjDinner.Application\obj\Debug\net8.0\CjDinner.748F3D86.Up2Date

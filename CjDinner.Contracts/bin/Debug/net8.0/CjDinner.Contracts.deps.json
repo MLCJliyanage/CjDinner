@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CjDinner.Contracts/1.0.0": {
+        "runtime": {
+          "CjDinner.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CjDinner.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
