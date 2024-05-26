@@ -1,9 +1,8 @@
+using CjDinner.Domain.Entities;
+
 namespace CjDinner.Application.Services.Authentication;
 
 public record AuthenticationResult(
-    Guid Id,
-    string Firstname,
-    string Lastname,
-    string Email,
+    User User,
     string Token
 );
