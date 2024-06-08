@@ -1,3 +1,4 @@
+using CjDinner.Api.Middleware;
 using CjDinner.Application;
 using CjDinner.Infrastructure;
 
@@ -23,6 +24,7 @@ var app = builder.Build();
         app.UseSwaggerUI();
     }
 
+    app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseHttpsRedirection();
     app.MapControllers();
     app.Run();
