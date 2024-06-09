@@ -1,4 +1,4 @@
-using CjDinner.Api.Errors;
+using CjDinner.Api.Common.Errors;
 using CjDinner.Application;
 using CjDinner.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
