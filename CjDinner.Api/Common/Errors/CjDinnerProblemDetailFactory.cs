@@ -1,10 +1,12 @@
 using System.Diagnostics;
+using CjDinner.Api.Common.Http;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 
-namespace CjDinner.Api.Errors;
+namespace CjDinner.Api.Common.Errors;
 
 public class CjDinnerProblemDetailsFactory : ProblemDetailsFactory
 {
@@ -92,8 +94,13 @@ public class CjDinnerProblemDetailsFactory : ProblemDetailsFactory
             problemDetails.Extensions["traceId"] = traceId;
         }
 
-        problemDetails.Extensions.Add("customProperty", "customValue");
+        var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
+        if (errors is not null)
+        {
+            problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
+        }
 
-        _configure?.Invoke(new() { HttpContext = httpContext!, ProblemDetails = problemDetails });
+
+        // _configure?.Invoke(new() { HttpContext = httpContext!, ProblemDetails = problemDetails });
     }
 }

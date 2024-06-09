@@ -1,6 +1,8 @@
 using CjDinner.Application.Common.Interfaces.Authentication;
 using CjDinner.Application.Common.Interfaces.Persistence;
+using CjDinner.Domain.Common.Errors;
 using CjDinner.Domain.Entities;
+using ErrorOr;
 
 namespace CjDinner.Application.Services.Authentication;
 
@@ -13,16 +15,16 @@ public class AuthenticationService : IAuthenticationService
         _jwtTokenGenerator = jwtTokenGenerator;
         _userRepository = userRepository;
     }
-    public AuthenticationResult Login(string email, string password)
+    public ErrorOr<AuthenticationResult> Login(string email, string password)
     {
         if (_userRepository.GetUserByEmail(email) is not User user)
         {
-            throw new Exception("User with given email exsists");
+            return Errors.Authentication.InvalidCredential;
         }
 
         if (user.Password != password)
         {
-            throw new Exception("Invalid Password");
+            return Errors.Authentication.InvalidCredential;
         }
 
         var token = _jwtTokenGenerator.GenerateToken(user);
@@ -32,17 +34,17 @@ public class AuthenticationService : IAuthenticationService
         );
     }
 
-    public AuthenticationResult Register(string firstname, string lastname, string email, string password)
+    public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
     {
         if (_userRepository.GetUserByEmail(email) is not null)
         {
-            throw new Exception("User with given email exsists");
+            return Errors.User.DuplicateEmail;
         }
 
         var user = new User
         {
-            FirstName = firstname,
-            LastName = lastname,
+            FirstName = firstName,
+            LastName = lastName,
             Email = email,
             Password = password
         };
