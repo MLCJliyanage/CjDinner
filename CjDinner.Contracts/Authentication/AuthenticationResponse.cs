@@ -4,8 +4,8 @@ namespace CjDinner.Contracts.Authentication;
 
 public record AuthenticationResponse(
     Guid Id,
-    string? Firstname,
-    string? Lastname,
+    string? FirstName,
+    string? LastName,
     string? Email,
     string Token
 
