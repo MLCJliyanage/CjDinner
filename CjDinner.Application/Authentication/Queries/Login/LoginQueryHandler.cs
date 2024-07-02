@@ -9,12 +9,12 @@ using CjDinner.Application.Authentication.Queries.Login;
 
 namespace CjDinner.Application.Authentication.Commands.Login;
 
-public class LoginCommandHandler : IRequestHandler<LoginQuery, ErrorOr<AuthenticationResult>>
+public class LoginQueryHandler : IRequestHandler<LoginQuery, ErrorOr<AuthenticationResult>>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
 
-    public LoginCommandHandler(
+    public LoginQueryHandler(
         IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
     {
         _jwtTokenGenerator = jwtTokenGenerator;
@@ -23,6 +23,7 @@ public class LoginCommandHandler : IRequestHandler<LoginQuery, ErrorOr<Authentic
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(LoginQuery query, CancellationToken cancellationToken)
     {
+        await Task.CompletedTask;
         if (_userRepository.GetUserByEmail(query.Email) is not User user)
         {
             return Errors.Authentication.InvalidCredential;
