@@ -1,23 +1,18 @@
-using System.Reflection;
-using CjDinner.Api.Common.Errors;
+using CjDinner.Api;
 using CjDinner.Application;
 using CjDinner.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services
+        .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
 
-    builder.Services.AddControllers();
-    builder.Services.AddSingleton<ProblemDetailsFactory, CjDinnerProblemDetailsFactory>();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
 }
-
-
 
 var app = builder.Build();
 {
@@ -29,6 +24,8 @@ var app = builder.Build();
 
     app.UseExceptionHandler("/error");
     app.UseHttpsRedirection();
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.MapControllers();
     app.Run();
 }
