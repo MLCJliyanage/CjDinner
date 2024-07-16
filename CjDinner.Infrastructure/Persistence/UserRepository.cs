@@ -1,5 +1,5 @@
 using CjDinner.Application.Common.Interfaces.Persistence;
-using CjDinner.Domain.Entities;
+using CjDinner.Domain.UserAggregate;
 
 namespace CjDinner.Infrastructure.Persistence;
 

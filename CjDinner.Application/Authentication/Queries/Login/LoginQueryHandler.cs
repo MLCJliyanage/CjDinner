@@ -1,7 +1,7 @@
 using CjDinner.Application.Common.Interfaces.Authentication;
 using CjDinner.Application.Common.Interfaces.Persistence;
 using CjDinner.Application.Services.Authentication.Common;
-using CjDinner.Domain.Entities;
+using CjDinner.Domain.UserAggregate;
 using CjDinner.Domain.Common.Errors;
 using ErrorOr;
 using MediatR;
