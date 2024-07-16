@@ -1,4 +1,4 @@
-using CjDinner.Domain.Entities;
+using CjDinner.Domain.UserAggregate;
 
 namespace CjDinner.Application.Common.Interfaces.Authentication;
 

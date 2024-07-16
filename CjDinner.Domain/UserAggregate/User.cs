@@ -1,4 +1,4 @@
-namespace CjDinner.Domain.Entities;
+namespace CjDinner.Domain.UserAggregate;
 
 public class User
 {

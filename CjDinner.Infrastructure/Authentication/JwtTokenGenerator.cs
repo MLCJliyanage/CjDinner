@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using CjDinner.Application.Common.Interfaces.Authentication;
 using CjDinner.Application.Common.Interfaces.Services;
-using CjDinner.Domain.Entities;
+using CjDinner.Domain.UserAggregate;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
