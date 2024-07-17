@@ -1,7 +1,7 @@
 using CjDinner.Application.Common.Interfaces.Persistence;
 using CjDinner.Domain.UserAggregate;
 
-namespace CjDinner.Infrastructure.Persistence;
+namespace CjDinner.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {

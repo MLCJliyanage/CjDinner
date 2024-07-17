@@ -4,8 +4,10 @@ using CjDinner.Application.Common.Interfaces.Persistence;
 using CjDinner.Application.Common.Interfaces.Services;
 using CjDinner.Infrastructure.Authentication;
 using CjDinner.Infrastructure.Persistence;
+using CjDinner.Infrastructure.Persistence.Repositories;
 using CjDinner.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -27,6 +29,8 @@ public static class DependencyInjection
     public static IServiceCollection AddPersistance(
         this IServiceCollection services)
     {
+        services.AddDbContext<CjDinnerDbContext>(options =>
+            options.UseSqlServer());
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMenuRepository, MenuRepository>();
 
