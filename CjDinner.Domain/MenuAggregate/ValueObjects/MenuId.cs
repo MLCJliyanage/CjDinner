@@ -11,6 +11,13 @@ public sealed class MenuId : ValueObject
         Value = value;
     }
 
+#pragma warning disable CS8618
+    private MenuId()
+    {
+
+    }
+#pragma warning restore CS8618
+
     public static MenuId CreateUnique()
     {
         return new(Guid.NewGuid());

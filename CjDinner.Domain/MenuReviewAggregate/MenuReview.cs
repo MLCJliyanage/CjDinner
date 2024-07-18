@@ -60,6 +60,13 @@ public class MenuReview : AggregateRoot<MenuReviewId>
             DateTime.UtcNow);
     }
 
+#pragma warning disable CS8618
+    private MenuReview()
+    {
+
+    }
+#pragma warning restore CS8618
+
     public void UpdateReview(Rating rating, string comment)
     {
         Rating = rating;

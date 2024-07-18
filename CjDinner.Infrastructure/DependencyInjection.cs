@@ -20,17 +20,17 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager configuration)
     {
         services.AddAuth(configuration)
-                .AddPersistance();
+                .AddPersistance(configuration);
 
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         return services;
     }
 
     public static IServiceCollection AddPersistance(
-        this IServiceCollection services)
+        this IServiceCollection services, ConfigurationManager configuration)
     {
         services.AddDbContext<CjDinnerDbContext>(options =>
-            options.UseSqlServer());
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMenuRepository, MenuRepository>();
 

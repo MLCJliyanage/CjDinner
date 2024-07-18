@@ -4,19 +4,26 @@ namespace CjDinner.Domain.Common.ValueObjects;
 
 public sealed class AverageRating : ValueObject
 {
-    public float Value { get; }
+    public double Value { get; private set; }
+    public int NumRatings { get; private set; }
 
-    private AverageRating(float value)
+    private AverageRating(double value, int numRatings)
     {
         Value = value;
+        NumRatings = numRatings;
     }
 
-    public static AverageRating Create(float value)
+#pragma warning disable CS8618
+    private AverageRating()
     {
-        if (value < 0 || value > 5)
-            throw new ArgumentOutOfRangeException(nameof(value), "Average rating must be between 0 and 5.");
 
-        return new AverageRating(value);
+    }
+#pragma warning restore CS8618
+
+    public static AverageRating CreateNew(double rating = 0, int numRatings = 0)
+    {
+
+        return new AverageRating(rating, numRatings);
     }
 
     public override IEnumerable<object> GetEqualityComponents()

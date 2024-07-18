@@ -36,10 +36,17 @@ public class Host : AggregateRoot<HostId>
         LastName = lastName;
         ProfileImage = profileImage;
         UserId = userId;
-        AverageRating = AverageRating.Create(0);
+        AverageRating = AverageRating.CreateNew();
         CreatedDateTime = createdDateTime;
         UpdatedDateTime = createdDateTime;
     }
+
+#pragma warning disable CS8618
+    private Host()
+    {
+
+    }
+#pragma warning restore CS8618
 
     public static Host Create(
         string firstName,

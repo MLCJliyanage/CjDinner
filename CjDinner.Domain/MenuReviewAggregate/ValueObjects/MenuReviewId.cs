@@ -11,6 +11,13 @@ public sealed class MenuReviewId : ValueObject
         Value = value;
     }
 
+#pragma warning disable CS8618
+    private MenuReviewId()
+    {
+
+    }
+#pragma warning restore CS8618
+
     public static MenuReviewId CreateUnique()
     {
         return new(Guid.NewGuid());
