@@ -27,8 +27,8 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
 
             mri.HasKey("Id");
             mri.Property(d => d.Value)
-                .HasColumnName("DinnerId")
-                .ValueGeneratedNever();
+                .HasColumnName("DinnerId");
+            // .ValueGeneratedNever();
 
 
         });
@@ -46,8 +46,8 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
 
             di.HasKey("Id");
             di.Property(d => d.Value)
-                .HasColumnName("DinnerId")
-                .ValueGeneratedNever();
+                .HasColumnName("DinnerId");
+            // .ValueGeneratedNever();
 
 
         });
@@ -61,17 +61,22 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
         builder.OwnsMany(m => m.Sections, sb =>
         {
             sb.ToTable("MenuSections");
+
             sb.WithOwner().HasForeignKey("MenuId");
+
             sb.HasKey("Id", "MenuId");
+
             sb.Property(s => s.Id)
                 .HasColumnName("MenuSectionId")
-                .ValueGeneratedNever()
+                // .ValueGeneratedNever()
                 .HasConversion(
                     id => id.Value,
                     value => MenuSectionId.Create(value)
                 );
+
             sb.Property(s => s.Name)
             .HasMaxLength(100);
+
             sb.Property(s => s.Description)
             .HasMaxLength(100);
 
@@ -79,13 +84,13 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
             {
                 ib.ToTable("MenuItems");
 
-                ib.HasKey(nameof(MenuItem.Id), "MenuSectionId", "MenuId");
-
                 ib.WithOwner().HasForeignKey("MenuSectionId", "MenuId");
+
+                ib.HasKey(nameof(MenuItem.Id), "MenuSectionId", "MenuId");
 
                 ib.Property(i => i.Id)
                  .HasColumnName("MenuItemId")
-                 .ValueGeneratedNever()
+                //  .ValueGeneratedNever()
                  .HasConversion(
                      id => id.Value,
                      value => MenuItemId.Create(value)
@@ -111,7 +116,7 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
 
         builder.HasKey(m => m.Id);
         builder.Property(m => m.Id)
-            .ValueGeneratedNever()
+            // .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
                 value => MenuId.Create(value)
@@ -122,7 +127,7 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
             .HasMaxLength(100);
         builder.OwnsOne(m => m.AverageRating);
         builder.Property(m => m.HostId)
-            .ValueGeneratedNever()
+            //.ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
                 value => HostId.Create(value)

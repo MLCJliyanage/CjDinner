@@ -4,6 +4,7 @@ using CjDinner.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
+
     builder.Services
         .AddPresentation()
         .AddApplication()
@@ -13,6 +14,12 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddSwaggerGen();
 
 }
+
+builder.Configuration
+            .SetBasePath(builder.Environment.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
 
 var app = builder.Build();
 {

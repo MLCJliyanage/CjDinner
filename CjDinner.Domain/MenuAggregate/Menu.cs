@@ -12,18 +12,18 @@ namespace CjDinner.Domain.MenuAggregate;
 
 public sealed class Menu : AggregateRoot<MenuId>
 {
-    public string Name { get; }
-    public string Description { get; }
-    public AverageRating AverageRating { get; }
-    public HostId HostId { get; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
+    public AverageRating AverageRating { get; private set; }
+    public HostId HostId { get; private set; }
     private readonly List<MenuSection> _sections = new();
     private readonly List<DinnerId> _dinnerIds = new();
     private readonly List<MenuReviewId> _menuReviewIds = new();
     public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
     public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
     public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
-    public DateTime CreatedDateTime { get; }
-    public DateTime UpdatedDateTime { get; }
+    public DateTime CreatedDateTime { get; private set; }
+    public DateTime UpdatedDateTime { get; private set; }
 
 
     public Menu(
@@ -41,7 +41,7 @@ public sealed class Menu : AggregateRoot<MenuId>
         UpdatedDateTime = updatedDateTime;
         HostId = hostId;
         _sections = sections;
-        AverageRating = AverageRating.Create(0);
+        AverageRating = AverageRating.CreateNew();
     }
 
     public static Menu Create(
@@ -61,4 +61,11 @@ public sealed class Menu : AggregateRoot<MenuId>
             DateTime.UtcNow
         );
     }
+
+#pragma warning disable CS8618
+    private Menu()
+    {
+
+    }
+#pragma warning restore CS8618
 }

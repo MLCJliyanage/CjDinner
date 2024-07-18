@@ -11,6 +11,13 @@ public sealed class HostId : ValueObject
         Value = value;
     }
 
+#pragma warning disable CS8618
+    private HostId()
+    {
+
+    }
+#pragma warning restore CS8618
+
     public static HostId CreateUnique()
     {
         return new(Guid.NewGuid());

@@ -44,7 +44,7 @@ public class Guest : AggregateRoot<GuestId>
         LastName = lastName;
         ProfileImage = profileImage;
         UserId = userId;
-        AverageRating = AverageRating.Create(0);
+        AverageRating = AverageRating.CreateNew();
         CreatedDateTime = createdDateTime;
         UpdatedDateTime = createdDateTime;
     }

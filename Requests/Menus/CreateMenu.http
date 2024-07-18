@@ -1,14 +1,13 @@
 @host=https://localhost:7288
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YjZiZWU1My1jYWM4LTQyNTAtODk2My1iMWMxNTNlNjNmZWMiLCJnaXZlbl9uYW1lIjoiQ2hhdGh1cmEiLCJmYW1pbHlfbmFtZSI6IkxpeWFuYWdlIiwianRpIjoiMTFlY2M5ZGQtNmY1OC00NGQ3LThlOTUtN2YwYzYwYTAzY2M0IiwiZXhwIjoxNzIwOTcyOTc0LCJpc3MiOiJDakRpbm5lciIsImF1ZCI6IkNqRGlubmVyIn0.7kEVOLshxoRvvSIZPE9SC3SG2nCrcmua_CPMW8SgOzY
-@hostId=asdr
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1MGNlNTNjMi1mMmFhLTQyNmUtYjM5MS04OTFhZDA0N2QxNjMiLCJnaXZlbl9uYW1lIjoiQ2hhdGh1cmEiLCJmYW1pbHlfbmFtZSI6IkxpeWFuYWdlIiwianRpIjoiMzBlZjRiMjQtYWRhMC00MWM5LWE3NTItY2JhNjIzMGJiNmY0IiwiZXhwIjoxNzIxMzM2MjkzLCJpc3MiOiJDakRpbm5lciIsImF1ZCI6IkNqRGlubmVyIn0.IEQoJXT50tYZBzuVfPCB6eD7C-gHwBZatWdL7eW9jm4
+@hostId=asdrr
 POST {{host}}/hosts/{{hostId}}/menus
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "Yummy Menu",
+    "name": "Yummy Menu 3",
     "description": "A menu with yummy food",
-    "averageRating": 0,
     "sections": [
         {
             "name": "Appetizers",
